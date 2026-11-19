@@ -3,6 +3,7 @@ Frog Hopper - Specification
 Contents
     Instructions to AI
     Technology
+    File Layout
     Introduction
     Display Layout
         Introductory Panel
@@ -30,10 +31,17 @@ Contents
     4) Author testing and AI fix cycle
 
 <h1>Technology
-    Javascript
+    Javascript - es6 modules
     HTML
     CSS
     Konva Graphics
+
+<h1>File Layout
+    /FrogHopper
+        index.html - main app HTML file
+        /assets/images - image files
+        /doc - documentation
+        /src - source modules
 
 <h1>Introduction
     Frog Hopper is an online action game for mobiles and PC's.
@@ -185,7 +193,4 @@ Contents
 
     The overlay has a Dismiss button, which clears the overlay and
     resumes the game.
-
-
-
 
