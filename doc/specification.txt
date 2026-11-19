@@ -1,0 +1,191 @@
+Frog Hopper - Specification
+
+Contents
+    Instructions to AI
+    Technology
+    Introduction
+    Display Layout
+        Introductory Panel
+        Menu Bar
+        Stage
+            Background
+            Entrance
+            Hop Control
+            Lily Pads
+            Frog
+            Fish
+        Status Lines
+        Game End Overlay
+        Charts Overlay            
+
+<h1>Instructions to AI
+    1) Read and analyse this Specification
+
+    2) Raise list of queries to be worked through by
+        the author
+
+    3) Produce the testable code derived from the specification and
+        the query responses
+
+    4) Author testing and AI fix cycle
+
+<h1>Technology
+    Javascript
+    HTML
+    CSS
+    Konva Graphics
+
+<h1>Introduction
+    Frog Hopper is an online action game for mobiles and PC's.
+
+    The game play consists of making a frog hop from the base of the
+    display area to the entrance sprite at the top of the display area.
+
+    The frog hops from lily pad to lily pad on the surface of a pond.
+
+    The player controls the hopping with an arc-shaped control, a touch
+    on which sets the direction and extent of the leap.
+
+    If the frog lands in the water rather than on a lily pad, the
+    attempt for that frog is failed and the user is presented with
+    a new frog on a lily pad at the base of the display area, with
+    the lily pads re-arranged.
+
+    There is a 25% chance that the frog will be intercepted by a leaping
+    fish during one of its leaps. In this case the frog is lost and
+    play is restarted with a new frog, as for falling in the water.
+
+    5 points are scored for each successful hop. When the frog
+    reaches the entrance at the top of the display, 20 points are scored
+    plus 1 point for each five seconds less than 1 minute 30 seconds to get 
+    from start to finish (entrance).
+
+    There are twelve frog attempts in each game. 
+
+    When all the frog attempts have been used, the end of game score
+    chart is displayed, showing the number of completed runs and
+    the total score.
+
+<h1>Display Layout
+    The display is centred with a width of 360px for mobiles and 500px
+    for PC's.
+
+<h2>Introductory Panel
+    The Introductory Panel appears as an overlay when the game is
+    first loaded. It provides a description of the game and the use
+    of the hop control on the right hand side of the base of the
+    display.
+
+<h2>Menu Bar
+    The menu bar is displayed at the top of the display. It consists
+    of a logo at the left and Charts, Restart and Home buttons on the
+    right. 
+    
+    The Charts button causes action to be suspended, while
+    the overlay for the last (highest) up to ten scores of the current 
+    session are displayed.
+
+    The Restart button causes the game to be restarted.
+
+    The Home button causes the browser to display the home page
+    at ../index.html.
+
+<h2>Stage
+    The game takes place on the Konva stage. This either 360px wide
+    for mobiles or 500px wide for PC's x 500px high.
+
+<h3>Background
+    The background of the stage is greyish blue, representing the
+    pool. The top 60 pixels are cyan/blue representing the sky
+    and horizon.
+
+<h3>Entrance
+    The reed entrance sprite used to complete a game round is 80px 
+    wide and set at the top of the stage. It is offset between 20px 
+    from the left of the stage and 100px from the right.
+
+<h3>Hop Control
+    The hop control is a circular arc curved area, ranging from
+    -120 to +120 degrees from the vertical. It is shaded from
+    medium grey at its centre to white at its outer edge. The 
+    radius of the arc circle is 60px. Touching/clicking the 
+    control at any point in the arc sets the extent of the hop
+    and the angle from the display vertical. The extent of the hop 
+    ranges from 20px near the centre to 140px at its outer arc edge.
+
+    The hop control sits at the base of the stage, on the right, with
+    a gap of 5px from the stage edges.
+
+<h3>Lily Pads
+    The lily pads are arranged in rows of random 1 to 3 (360px stage) or
+    1 to 5 (500px stage). They are 60px wide. The sprite is lilyPad.png. 
+    
+    The first row has the lily pad top at 90px from the stage base, 
+    but the pads do not touch or cover the hop control on the right.
+    The subsequent rows are 80px apart, with the vertical position
+    of the lily pads varying by +/-10px random from the row.
+
+    There should always be at least one instance of a distance of
+    140px or less between lily pads from row to row.
+
+    There are 5 rows of lily pads in total.
+
+<h3>Frog
+    There is only ever one frog on the stage, which begins on the first
+    (bottom) lily pad row of the stage. It always sits at the centre of a 
+    lily pad, but faces in the last direction hopped.
+
+    The sitting frog has 6 sprites facing right of vertical at intervals
+    of 22.5 degrees (0 to 112.5 degrees). They are named frog01.png
+    to frog06.png respectively. The sprite displayed is the nearest angle
+    to the hop angle. The sprites can be flipped to give the left angles.
+    The sitting frog is displayed 40px wide.
+
+    When the frog hops, the frog is briefly shown halfway along its
+    trajectory with legs extended. The sprites for this are frogLeaping01.png
+    to frogLeaping06.png at the same angles as the sitting frog (22.5 degree 
+    steps). These also can be flipped for the left going angles.
+
+    The width of the leaping sprite ranges from 40px at 0 degrees, to 60px at
+    90 degrees.
+
+    If the leaping frog does not land with its centre within 50 pixels of the
+    centre of the lily pad it is lost, and the splash sprite, splash.png is briefly
+    displayed (40px wide, at the trajectory midpoint).
+
+<h3>Fish 
+    If the frog is leaping from row to row (ie: more than 20 degrees from the 
+    horizontal) then there is a 25% chance that it will be intercepted
+    by a fish. This appears as the sprite leapingFish.png, coming from the
+    right or left of the frog as it reaches its trajectory midpoint.
+
+    The splash sprite splash.png is displayed at the trajectory midpoint briefly
+    after the fish.
+
+    The fish faces right in the file, so can be flipped to have it coming from 
+    the right (facing left).
+
+<h2>Status Lines
+    These appear below the stage.
+
+    The status lines are used to indicate when a frog has been lost, or reached
+    the entrance. They also display the current score.
+
+<h2>Game End Overlay
+    The game end overlay is displayed when the twelfth frog reaches the
+    entrance or is lost. It displays the total score and the number of 
+    rounds completed successfully along with the game ended message.
+
+    It has a Restart button, which clears the overlay and restarts the game.
+
+<h2>Charts Overlay
+    The charts overlay suspends play and displays the up to ten top
+    scoring games as points and rounds completed in the current
+    browser session.
+
+    The overlay has a Dismiss button, which clears the overlay and
+    resumes the game.
+
+
+
+
