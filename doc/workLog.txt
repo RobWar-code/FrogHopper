@@ -6,8 +6,40 @@ Jobs Due
     * specification
     * graphics
 
-    Set up github
+    * Set up github
+
+    * Make sitting frog more visible against lily pad
+
+    V0.02:
+
+    * Rotate lily pads at random angles.
+
+    * Crop the reedBed.png image to sit on either side of the entrance sprite
+    up to the edge of the stage (scale to 80px high).
+
+    * Permit hops greater than 90 degrees from the vertical in the same row
+
+    * Fix hop indicated as outside permitted range or row on leap toward entrance.
+
+    * Move the hop control 20 pixels lower down.
+
+    * Increase the radius of the hop control by 15px.
+
+    * Set the maximum distance to the nearest lily pad or from a lily pad 
+    to the entrance to 140px.
     
+    V0.03 
+
+    For a successful jump at the entrance allow for a distance of 30px on either
+    side of the entrance centre and up to 30px down from the top pond edge.
+
+    Enable the chance of a leaping fish as per the specification, but set it 
+    at 20% per hop.
+
+    When the frog lands on a lily pad it should face in the nearest direction
+    to the leap.
+
+
 
 
 Jobs Done
