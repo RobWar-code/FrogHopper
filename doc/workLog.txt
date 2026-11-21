@@ -10,7 +10,7 @@ Jobs Due
 
     * Make sitting frog more visible against lily pad
 
-    V0.02:
+    V0.2:
 
     * Rotate lily pads at random angles.
 
@@ -28,17 +28,22 @@ Jobs Due
     * Set the maximum distance to the nearest lily pad or from a lily pad 
     to the entrance to 140px.
     
-    V0.03 
+    V0.3 
 
-    For a successful jump at the entrance allow for a distance of 30px on either
+    * For a successful jump at the entrance allow for a distance of 30px on either
     side of the entrance centre and up to 30px down from the top pond edge.
 
-    Enable the chance of a leaping fish as per the specification, but set it 
+    * Enable the chance of a leaping fish as per the specification, but set it 
     at 20% per hop.
 
-    When the frog lands on a lily pad it should face in the nearest direction
+    * When the frog lands on a lily pad it should face in the nearest direction
     to the leap.
 
+    V0.4
+
+    The leaping fish has currently not appeared, please check the code.
+
+    Beautify the code for this production.
 
 
 
